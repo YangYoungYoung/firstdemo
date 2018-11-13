@@ -41,7 +41,7 @@
       <image src='{{orderPath}}' mode="aspectFit"></image>
     </view>
     <view class='column'>
-      <text class="sku-price">现金券{{integral}}</text>
+      <text class="sku-price">{{goodName}}</text>
       <!-- <text class="sku-title"><block wx:if="{{gg_txt==''}}">请选择规格</block><block wx:else>已选择{{gg_txt}}ml</block></text> -->
     </view>
     <text class="line"></text>
@@ -53,6 +53,7 @@
     </view>
     <text class="line"></text> -->
     <view class="row">
+    <text class='text-integral'>价格：{{integral}}元</text>
       <text>数量</text>
       <view class="quantity-position">
         <view class="stepper">

@@ -11,12 +11,12 @@ Page({
     userInfo: {},
     money: 0,
     actionSheetHidden: true,
-    balance:0
+    balance:0//余额
   },
   onLoad: function(options) {
     var that =  this;
     let openId = wx.getStorageSync("openId")
-    let url = "https://chanmao.oicp.vip/mall/api/getBalance"
+    let url = "https://mall.cmdd.tech/mall/api/getBalance"
     var params = {
       
       openId: openId

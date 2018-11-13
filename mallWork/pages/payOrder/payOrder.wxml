@@ -84,7 +84,7 @@
         <view class="box-cart">合计：
           <text style="color:red">现金券{{totalMoney}}</text>
         </view>
-        <button class="box-right" formType="submit" bindtap='paySuccess'>
+        <button class="box-right" formType="submit" bindtap='payOrder'>
           提交订单
         </button>
       </view>

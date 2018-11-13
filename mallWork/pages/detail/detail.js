@@ -9,19 +9,19 @@ Page({
   data: {
 
     showModalStatus: false, //是否显示
-    gg_id: 0, //规格ID
-    gg_txt: '', //规格文本
-    gg_price: 0, //规格价格
-    guigeList: [{
-      guige: '100',
-      price: '150'
-    }, {
-      guige: '200',
-      price: '150'
-    }, {
-      guige: '300',
-      price: '150'
-    }],
+    // gg_id: 0, //规格ID
+    // gg_txt: '', //规格文本
+    // gg_price: 0, //规格价格
+    // guigeList: [{
+    //   guige: '100',
+    //   price: '150'
+    // }, {
+    //   guige: '200',
+    //   price: '150'
+    // }, {
+    //   guige: '300',
+    //   price: '150'
+    // }],
     num: 1, //初始数量
   },
   filter: function(e) {
@@ -117,7 +117,7 @@ Page({
     that.setData({
       goodId: options.goodId
     })
-    let url = "https://chanmao.oicp.vip/mall/api/getShopDetail"
+    let url = "https://mall.cmdd.tech/mall/api/getShopDetail"
     var params = {
       id: options.goodId
     }
@@ -194,7 +194,7 @@ Page({
     var that = this;
     that.hideModal();
     var id = that.data.goodId;
-    let url = "https://chanmao.oicp.vip/mall/api/createOrder";
+    let url = "https://mall.cmdd.tech/mall/api/createOrder";
     var openId = wx.getStorageSync("openId");
     var orderList = new Array();
     var shop = {

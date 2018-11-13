@@ -33,7 +33,7 @@ Page({
   onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数
     let that = this
-    let url = "https://chanmao.oicp.vip/mall/api/getAllShop"
+    let url = "https://mall.cmdd.tech/mall/api/getAllShop"
     var params = {
       // code: app.globalData.code
     }

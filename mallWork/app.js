@@ -1,10 +1,12 @@
 //app.js
 App({
-  onLaunch: function () {
+  appData: '',
+  onLaunch: function (options) {
+    this.appData = options 
     // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    // var logs = wx.getStorageSync('logs') || []
+    // logs.unshift(Date.now())
+    // wx.setStorageSync('logs', logs)
 
     // 登录
     wx.login({

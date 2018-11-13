@@ -133,7 +133,7 @@ page {
   display: inline-block;
   width: 100%;
   padding: 29rpx 0rpx;
-  font-size: 12px;
+  font-size: 30rpx;
   color: white;
   background: orange;
   margin: 0px;
@@ -248,6 +248,11 @@ page {
   display: flex;
   flex-direction: row;
   align-items: center;
+  font-size: 38rpx;
+}
+.text-integral{
+  
+  margin-right: 38rpx;
 }
 
 .row .quantity-position {

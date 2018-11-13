@@ -25,7 +25,7 @@ Page({
     orderId = options.orderId;
     console.log("------------" + orderId)
     let that = this
-    let url = "https://chanmao.oicp.vip/mall/api/getOrder"
+    let url = "https://mall.cmdd.tech/mall/api/getOrder"
 
     let method = "GET"
     var params = {
@@ -36,7 +36,7 @@ Page({
       }),
       network.POST(url, params, method).then((res) => {
         wx.hideLoading();
-        console.log("订单的结果是：" + res.data.shopInfo[0].checked);
+        // console.log("订单的结果是：" + res.data.shopInfo[0].checked);
         var goods = res.data.shopInfo;
 
         var total = 0;
@@ -126,7 +126,7 @@ Page({
       common.showTip("请先选择地址", "loading");
       return;
     }
-    let url = "https://chanmao.picp.vip/weixin/getRepayId"
+    let url = "https://weixin.cmdd.tech/weixin/getRepayId"
     let method = "GET"
     let openId = wx.getStorageSync("openId")
     var money = that.data.totalMoney * 100
@@ -179,7 +179,7 @@ Page({
   //支付返回通知
   paySuccess: function() {
     let that = this;
-    let url = "https://chanmao.oicp.vip/mall/api/editOrderStatus"
+    let url = "https://mall.cmdd.tech/mall/api/editOrderStatus"
     let method = "POST"
     
     //当前的商品数组

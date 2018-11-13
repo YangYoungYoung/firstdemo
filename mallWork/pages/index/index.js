@@ -14,21 +14,21 @@ Page({
     banner: [],
     menu: []
   },
-  
-  
-  onLoad: function () {
+
+
+  onLoad: function() {
     let that = this
-    let url = "https://chanmao.oicp.vip/mall/api/getShopInfo"
+    let url = "https://mall.cmdd.tech/mall/api/getShopInfo"
     var params = {
-      
+
     }
     let method = "GET";
     wx.showLoading({
-      title: '加载中...',
-    }),
+        title: '加载中...',
+      }),
       network.POST(url, params, method).then((res) => {
         wx.hideLoading();
-      // console.log("返回值是：" + res.data.mainType);
+        // console.log("返回值是：" + res.data.mainType);
         that.setData({
           banner: res.data.picUrl,
           menu: res.data.mainType,
@@ -45,20 +45,27 @@ Page({
       });
   },
   //跳转到详情页
-  toDetail: function (event){
+  toDetail: function(event) {
     var id = event.currentTarget.dataset.id;
     // console.log("当前点击的是："+id);
     wx.navigateTo({
-      url: '../detail/detail?goodId='+id,
+      url: '../detail/detail?goodId=' + id,
     })
   },
   //跳转到商品类型
-  navigateToFunction: function (event){
+  navigateToFunction: function(event) {
     var id = event.currentTarget.dataset.id;
-    console.log("当前点击的是"+id);
-    wx.navigateTo({
-      url: '../typeInfo/typeInfo?id='+id,
-    })
+    console.log("当前点击的是" + id);
+    if (id == 10) {
+      wx.switchTab({
+        url: '../type/type',
+      })
+    } else {
+      wx.navigateTo({
+        url: '../typeInfo/typeInfo?id=' + id,
+      })
+    }
+
   }
 
 })

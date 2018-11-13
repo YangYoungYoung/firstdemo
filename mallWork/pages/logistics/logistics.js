@@ -21,7 +21,7 @@ Page({
     var orderId = options.orderId;
     console.log("当前订单是："+orderId);
     let that = this
-    let url = "https://chanmao.oicp.vip/mall/api/getLogistics"
+    let url = "https://mall.cmdd.tech/mall/api/getLogistics"
 
     let method = "GET"
     var params = {

@@ -16,7 +16,7 @@ Page({
   onLoad: function (options) {
     let id = options.id;
     let that = this
-    let url = "https://chanmao.oicp.vip/mall/api/getShopByType"
+    let url = "https://mall.cmdd.tech/mall/api/getShopByType"
     var params = {
       type:id
     }

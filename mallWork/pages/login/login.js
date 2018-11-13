@@ -10,6 +10,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+
+    appData: app.appData, //把拿到的值存储起来 
     //判断小程序的API，回调，参数，组件等是否在当前版本可用。
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     authorization: true,
@@ -20,11 +22,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    if (options.shopId != null && options.shopId!=undefined) {
-      shopId = options.shopId;
+    var that = this;
+    var appData = that.data.appData;
+    if (appData.shopId != null && appData.shopId != undefined) {
+      shopId = appData.shopId;
     }
-    if (options.openId != null && options.openId != undefined) {
-      parentOpenId = options.openId;
+    if (appData.openId != null && appData.openId != undefined) {
+      parentOpenId = appData.openId;
     }
     var that = this
     // 登录
@@ -126,7 +130,7 @@ Page({
     let that = this
     let userInfo = res
     app.globalData.userInfo = userInfo
-    let url = "https://chanmao.picp.vip/weixin/getOpenId"
+    let url = "https://weixin.cmdd.tech/weixin/getOpenId"
     // console.log("当前的code值是：" + app.globalData.code);
     var params = {
       code: app.globalData.code
@@ -180,14 +184,14 @@ Page({
         //点击确定
         if (res.confirm) {
           //这里要做支付
-          let url = "https://chanmao.picp.vip/weixin/getRepayId"
+          let url = "https://weixin.cmdd.tech/weixin/getRepayId"
           let method = "GET"
           let openId = wx.getStorageSync("openId")
           // var money = that.data.totalMoney * 100
           // console.log("价格是：" + money);
           var params = {
             openId: openId,
-            money: 500
+            money: 1
           }
           wx.showLoading({
               title: '加载中...',
@@ -237,7 +241,7 @@ Page({
   registerRequ: function() {
     var that = this;
     let openId = wx.getStorageSync("openId")
-    let url = "https://chanmao.oicp.vip/mall/api/createShopUser"
+    let url = "https://mall.cmdd.tech/mall/api/createShopUser"
     var params = {
       parentOpenId: parentOpenId,
       shopId: shopId,
@@ -271,9 +275,8 @@ Page({
     //校验是否是会员
     var that = this;
     let openId = wx.getStorageSync("openId")
-    let url = "https://chanmao.oicp.vip/mall/api/isOrNotUser"
+    let url = "https://mall.cmdd.tech/mall/api/isOrNotUser"
     var params = {
-
       openId: openId
     }
     let method = "GET";

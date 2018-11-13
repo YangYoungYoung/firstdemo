@@ -289,7 +289,7 @@ Page({
       }
     }
     //将选择的商品ID传给服务器生成订单
-    let url = "https://chanmao.oicp.vip/mall/api/createOrder"
+    let url = "https://mall.cmdd.tech/mall/api/createOrder"
     let openId = wx.getStorageSync('openId');
     console.log("用户的opnId是：" + openId);
     /**
