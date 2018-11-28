@@ -171,7 +171,7 @@ Page({
     var oldcartResult = new Array;
     oldcartResult = wx.getStorageSync('cartResult');
     if (!oldcartResult) {
-      cartResult.push(detailArray);
+      cartResult.push(  );
       wx.setStorage({
         key: "cartResult",
         data: cartResult

@@ -15,7 +15,7 @@ Page({
    */
   onLoad: function(options) {
     let that = this;
-    let url = "https://chanmao.oicp.vip/mall/api/getCoupons"
+    let url = "https://mall.cmdd.tech/mall/api/getCoupons"
     let method = "GET"
     let openId = wx.getStorageSync("openId")
     var params = {

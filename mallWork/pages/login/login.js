@@ -191,7 +191,7 @@ Page({
           // console.log("价格是：" + money);
           var params = {
             openId: openId,
-            money: 1
+            money: 500
           }
           wx.showLoading({
               title: '加载中...',

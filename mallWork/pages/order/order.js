@@ -32,7 +32,7 @@ Page({
     var that = this;
     var currentTab = that.data.currentTab;
     // console.log("当前点击的是：" + currentTab);
-    let url = "https://chanmao.oicp.vip/mall/api/getOrderByStatus";
+    let url = "https://mall.cmdd.tech/mall/api/getOrderByStatus";
     let openId = wx.getStorageSync("openId")
     var params = {
       openId: openId,
@@ -118,11 +118,11 @@ Page({
     var that = this;
     var shopId = e.target.dataset.id;
     var orderId = e.target.dataset.orderid;
-    console.log("==================" + orderId);
+    // console.log("==================" + orderId);
 
     common.showModal('你确定取消订单吗？', '提示', true, function(e) {
       if (e.confirm) {
-        let url = "https://chanmao.oicp.vip/mall/api/delOrderStatus";
+        let url = "https://mall.cmdd.tech/mall/api/delOrderStatus";
         var params = {
           orderId: orderId,
           shopId: shopId
@@ -257,7 +257,7 @@ Page({
     var orderId = e.target.dataset.orderid;
     var money = e.target.dataset.price*100;
     console.log("当前的订单id是：" + orderId + "总价是：" + money);
-    let url = "https://chanmao.picp.vip/weixin/getRepayId"
+    let url = "https://weixin.cmdd.tech/weixin/getRepayId"
     let method = "GET"
     var params = {
       openId: wx.getStorageSync("openId"),
@@ -325,7 +325,7 @@ Page({
   //支付成功的回调(这里的回调和之前的不一样)
   paySuccess: function(orderId, shopId, state) {
     let that = this;
-    let url = "https://chanmao.oicp.vip/mall/api/orderStatus"
+    let url = "https://mall.cmdd.tech/mall/api/orderStatus"
     let method = "GET"
     var params = {
       shopId: shopId,

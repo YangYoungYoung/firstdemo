@@ -154,7 +154,7 @@ Page({
   onConfirm: function() {
     this.hideModal();
     let that = this;
-    let url = "https://chanmao.oicp.vip/mall/weixin/getRepayId"
+    let url = "https://mall.cmdd.tech/mall/weixin/getRepayId"
     let method = "GET"
     let openId = wx.getStorageSync("openId")
     var money = that.data.money * 100
@@ -213,7 +213,7 @@ Page({
   //唤出商品列表
   listenerButton: function() {
     let that = this;
-    let url = "https://chanmao.oicp.vip/mall/api/findAllShop"
+    let url = "https://mall.cmdd.tech/mall/api/findAllShop"
     let method = "GET"
     // let openId = wx.getStorageSync("openId")
 

@@ -94,18 +94,23 @@ Page({
   
     var list = that.data.detail;
     console.log("点击前的状态是" + list[parseInt(index)].checked);
-    if (index != null) {
+    var checked = list[parseInt(index)].checked;
+    if(checked==null){
+      checked = false;
+    }
+    
+    if (index != null ) {
       //优惠券
       var coupon = list[parseInt(index)].coupon.coupon
-      //当前总金额
-      var money = that.data.totalMoney
+      var money = that.data.totalMoney;
       //如果之前是选中的状态
       if (list[parseInt(index)].checked) {
-       
+        //当前总金额
+       money+=coupon;
         list[parseInt(index)].checked=false;
         that.setData({
           detail: list,
-          totalMoney: money
+          totalMoney: money 
         })
       } else {
        
@@ -133,7 +138,7 @@ Page({
     console.log("价格是：" + money);
     var params = {
       openId: openId,
-      money: 1
+      money: money
     }
     wx.showLoading({
         title: '加载中...',
